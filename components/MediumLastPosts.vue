@@ -1,11 +1,14 @@
 <template>
-  <div >
-    <h1>My last medium posts</h1>
-    <ul>
-      <li v-for="post in feed">
-        <a :href="post.link">{{ post.title }}</a> ({{ post.stringtags }})
-      </li>
-    </ul>
+  <div class="box">
+    <h2  class="subtitle">My last medium posts</h2>
+    <div>
+      <div v-for="post in feed">
+        <p><a :href="post.link">{{ post.title }}</a></p>
+        <span v-for="tag in post.category" class="tag is-success">{{ tag }}</span>
+
+        <!-- <br />({{ post.stringtags }}) -->
+      </div>
+    </div>
   </div>
 </template>
 
